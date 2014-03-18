@@ -21,7 +21,7 @@ template "#{node['apache']['dir']}/sites-available/artifactory" do
     host_name: host_name
   )
 
-  if File.exists?("#{node['apache']['dir']}/sites-enabled/artifactory")
+  if File.exist?("#{node['apache']['dir']}/sites-enabled/artifactory")
     notifies  :restart, 'service[apache2]'
   end
 end
